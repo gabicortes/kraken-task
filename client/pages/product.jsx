@@ -1,3 +1,11 @@
+import { Navbar } from "../components/NavBar";
+import { ProductPrice } from "../components/ProductPrice";
+
 export default function Product() {
-  return <div>Product page</div>;
+  return (
+    <>
+      <Navbar />
+      <ProductPrice />
+    </>
+  );
 }

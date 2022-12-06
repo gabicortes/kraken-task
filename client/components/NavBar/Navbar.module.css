@@ -1,0 +1,10 @@
+.navBarWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logoImg {
+  max-width: 50%;
+  height: 30px;
+}
