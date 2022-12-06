@@ -1,3 +1,26 @@
 .section {
-  padding: 20px 0;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.productQuantityWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonDecrease,
+.buttonIncrease {
+  width: 20px;
 }
