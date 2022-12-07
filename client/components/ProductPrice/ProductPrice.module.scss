@@ -1,0 +1,77 @@
+@use "../../styles/colors.scss";
+
+.section {
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.productQuantityWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonsWrapper {
+  display: flex;
+}
+
+.buttonDecrease,
+.buttonIncrease {
+  width: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: colors.$sohoLights;
+  color: colors.$hemocyanin;
+  margin: 0 10px;
+}
+
+.buttonDecrease,
+.buttonIncrease,
+.buttonAddToCart {
+  cursor: pointer;
+}
+
+.buttonDecrease:disabled {
+  background-color: colors.$plum;
+  color: colors.$purpleHaze;
+}
+
+.productImg {
+  border-radius: 20px;
+}
+
+.productName {
+  font-weight: 200;
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+.detailQuantity {
+  color: colors.$purpleHaze;
+}
+
+.buttonAddToCart {
+  background-color: colors.$sohoLights;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.quantityCount,
+.price {
+  font-size: 1.5rem;
+}
+
+.quantityProduct {
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}

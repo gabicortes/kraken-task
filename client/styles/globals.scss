@@ -1,0 +1,23 @@
+/* Octopus Energy brand colours used in the design */
+@use './colors.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Gotham, helvetica, arial, sans-serif;
+  color: colors.$ice;
+}
+
+body {
+  background: colors.$siphon;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
+}

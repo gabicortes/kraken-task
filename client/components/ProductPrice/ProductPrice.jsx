@@ -1,20 +1,49 @@
-import bulb from "../../public/philips-plumen.jpg";
-import styles from "./ProductPrice.module.css";
+import { useState } from "react";
+import styles from "./ProductPrice.module.scss";
 
-export function ProductPrice() {
+export function ProductPrice(props) {
+  const [count, setCount] = useState(1);
+
+  const { product } = props;
+
+  const handleClickDecrease = () => {
+    setCount(count--);
+  };
+
+  const handleClickIncrease = () => {
+    setCount(count++);
+  };
+
   return (
     <section className={styles.section}>
-      <img className={styles.productImg} src={bulb.src} alt="product image" />
-      <h1 className={styles.h2}>Energy saving light bulb</h1>
-      <span>25 W // Packet of 4</span>
+      <img
+        className={styles.productImg}
+        src={product?.img_url}
+        alt="product image"
+      />
+      <h1 className={styles.productName}>{product?.name}</h1>
+      <span className={styles.detailQuantity}>
+        {product?.power} // Packet of {product?.quantity}
+      </span>
       <div className={styles.priceWrapper}>
-        <span>£12.99</span>
+        <div className={styles.price}>£{product?.price / 100}</div>
         <div className={styles.productQuantityWrapper}>
-          <span>Qty</span>
+          <span className={styles.quantityProduct}>Qty</span>
           <div className={styles.buttonsWrapper}>
-            <button className={styles.buttonDecrease}>-</button>
-            <div className={styles.quantityProduct}>1</div>
-            <button className={styles.buttonIncrease}>+</button>
+            <button
+              className={styles.buttonDecrease}
+              onClick={handleClickDecrease}
+              disabled={count < 2}
+            >
+              -
+            </button>
+            <div className={styles.quantityCount}>{count}</div>
+            <button
+              className={styles.buttonIncrease}
+              onClick={handleClickIncrease}
+            >
+              +
+            </button>
           </div>
         </div>
       </div>
