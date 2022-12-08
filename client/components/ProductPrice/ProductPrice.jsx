@@ -24,7 +24,9 @@ export function ProductPrice(props) {
         {product.power} // Packet of {product.quantity}
       </span>
       <div className={styles.priceWrapper}>
-        <div className={styles.price}>£{(product.price / 100) * count}</div>
+        <div className={styles.price}>
+          £{((product.price / 100) * count).toFixed(2)}
+        </div>
         <div className={styles.productQuantityWrapper}>
           <span className={styles.quantityProduct}>Qty</span>
           <div className={styles.buttonsWrapper}>
