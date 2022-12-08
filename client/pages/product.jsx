@@ -4,6 +4,7 @@ import { Navbar } from "../components/NavBar";
 import { ProductPrice } from "../components/ProductPrice";
 import { TableSection } from "../components/TableSection";
 import { TextSection } from "../components/TextSection";
+import { Footer } from "../components/Footer";
 
 export default function Product() {
   const [product, setProduct] = useState({});
@@ -37,6 +38,7 @@ export default function Product() {
       <ProductPrice product={product} />
       <TextSection title="Description" text={product.description} highlighted />
       <TableSection title="Specifications" table={specifications} />
+      <Footer highlighted />
     </>
   );
 }
