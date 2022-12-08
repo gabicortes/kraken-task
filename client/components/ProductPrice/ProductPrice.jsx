@@ -6,14 +6,6 @@ export function ProductPrice(props) {
 
   const { product } = props;
 
-  const handleClickDecrease = () => {
-    setCount(count--);
-  };
-
-  const handleClickIncrease = () => {
-    setCount(count++);
-  };
-
   return (
     <section className={styles.section}>
       <img
@@ -32,7 +24,9 @@ export function ProductPrice(props) {
           <div className={styles.buttonsWrapper}>
             <button
               className={styles.buttonDecrease}
-              onClick={handleClickDecrease}
+              onClick={() => {
+                setCount(count--);
+              }}
               disabled={count < 2}
             >
               -
@@ -40,7 +34,9 @@ export function ProductPrice(props) {
             <div className={styles.quantityCount}>{count}</div>
             <button
               className={styles.buttonIncrease}
-              onClick={handleClickIncrease}
+              onClick={() => {
+                setCount(count++);
+              }}
             >
               +
             </button>
