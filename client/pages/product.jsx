@@ -2,28 +2,41 @@ import { useEffect, useState } from "react";
 import { getProductInfo } from "../apiCall";
 import { Navbar } from "../components/NavBar";
 import { ProductPrice } from "../components/ProductPrice";
-import { Description } from "../components/Description";
-import { Specifications } from "../components/Specifications";
+import { TableSection } from "../components/TableSection";
+import { TextSection } from "../components/TextSection";
 
 export default function Product() {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
-    const getAllProducts = async () => {
+    const getProduct = async () => {
       const result = await getProductInfo();
-      setProducts(result);
+      setProduct(result);
     };
-    getAllProducts();
+    getProduct();
   }, []);
 
-  console.log(products);
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
+  const specifications = [
+    { attribute: "Brand", value: product.brand },
+    { attribute: "Item weight", value: product.weight },
+    {
+      attribute: "Dimensions",
+      value: `${product.height} x ${product.width} x ${product.length}`,
+    },
+    { attribute: "Item Model Number", value: product.model_code },
+    { attribute: "Colour", value: product.colour },
+  ];
 
   return (
     <>
       <Navbar />
-      <ProductPrice product={products[0]} />
-      <Description product={products[0]} />
-      <Specifications product={products[0]} />
+      <ProductPrice product={product} />
+      <TextSection title="Description" text={product.description} highlighted />
+      <TableSection title="Specifications" table={specifications} />
     </>
   );
 }

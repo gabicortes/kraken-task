@@ -1,12 +1,12 @@
 import { Basket } from "../Basket";
 import logo from "../../public/octopus-logo.svg";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 export function Navbar() {
   return (
-    <div className={styles.navBarWrapper}>
+    <section className={styles.navBarWrapper}>
       <img className={styles.logoImg} src={logo.src} alt="octopus-logo" />
       <Basket className={styles.basket} />
-    </div>
+    </section>
   );
 }

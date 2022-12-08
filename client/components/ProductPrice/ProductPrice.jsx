@@ -18,7 +18,7 @@ export function ProductPrice(props) {
     <section className={styles.section}>
       <img
         className={styles.productImg}
-        src={product?.img_url}
+        src={product.img_url}
         alt="product image"
       />
       <h1 className={styles.productName}>{product?.name}</h1>
