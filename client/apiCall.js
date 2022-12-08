@@ -8,15 +8,14 @@ export const getProductInfo = async () => {
       data: {
         query: `
                 query {
-                    allProducts {
-                      name, power, description, price, quantity, brand, weight, height, width, length, model_code, colour, img_url
-                     }
-                   }
-                 `,
+                    Product (id: 1) {
+                     name, power, description, price, quantity, brand, weight, height, width, length, model_code, colour, img_url
+                    }
+                }
+              `,
       },
     });
-
-    return result.data.data.allProducts;
+    return result.data.data.Product;
   } catch (err) {
     console.log(err);
   }
