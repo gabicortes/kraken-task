@@ -8,6 +8,7 @@ import { Footer } from "../components/Footer";
 
 export default function Product() {
   const [product, setProduct] = useState({});
+  const [itemsInCart, setItemsInCart] = useState(0);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -34,8 +35,12 @@ export default function Product() {
 
   return (
     <>
-      <Navbar />
-      <ProductPrice product={product} />
+      <Navbar itemsInCart={itemsInCart} />
+      <ProductPrice
+        product={product}
+        setItemsInCart={setItemsInCart}
+        itemsInCart={itemsInCart}
+      />
       <TextSection title="Description" text={product.description} highlighted />
       <TableSection title="Specifications" table={specifications} />
       <Footer highlighted />

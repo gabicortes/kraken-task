@@ -3,3 +3,7 @@
 .basket {
   height: 25px;
 }
+
+.itemsInCart {
+  position: relative;
+}

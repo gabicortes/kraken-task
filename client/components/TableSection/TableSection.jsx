@@ -12,14 +12,16 @@ export function TableSection(props) {
 function Table(props) {
   return (
     <table>
-      {props.table.map((row, index) => {
-        return (
-          <tr key={index}>
-            <td className={styles.tableElement}>{row.attribute}</td>
-            <td className={styles.tableElement}>{row.value}</td>
-          </tr>
-        );
-      })}
+      <tbody>
+        {props.table.map((row, index) => {
+          return (
+            <tr key={index}>
+              <td className={styles.tableElement}>{row.attribute}</td>
+              <td className={styles.tableElement}>{row.value}</td>
+            </tr>
+          );
+        })}
+      </tbody>
     </table>
   );
 }
