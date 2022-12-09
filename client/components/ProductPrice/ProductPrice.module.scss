@@ -64,6 +64,7 @@
   border-radius: 10px;
   padding: 20px;
   font-size: 14px;
+  width: 100%;
 }
 
 .quantityCount,
@@ -74,4 +75,24 @@
 .quantityProduct {
   font-size: 0.75rem;
   margin-bottom: 5px;
+}
+
+@media (min-width: 550px) {
+  .productImg {
+    align-self: center;
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .productImg {
+    width: 30%;
+  }
+  .section {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+  }
 }
