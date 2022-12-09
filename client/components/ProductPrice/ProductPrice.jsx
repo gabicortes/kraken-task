@@ -35,18 +35,20 @@ export function ProductPrice(props) {
                 className={styles.buttonDecrease}
                 type="button"
                 onClick={() => {
-                  setCount(count--);
+                  setCount(count - 1);
                 }}
                 disabled={count < 2}
               >
                 -
               </button>
-              <div className={styles.quantityCount}>{count}</div>
+              <div title="Current quantity" className={styles.quantityCount}>
+                {count}
+              </div>
               <button
                 className={styles.buttonIncrease}
                 type="button"
                 onClick={() => {
-                  setCount(count++);
+                  setCount(count + 1);
                 }}
               >
                 +
