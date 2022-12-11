@@ -4,12 +4,22 @@
   height: 25px;
 }
 
+.basketWrapper {
+  position: relative;
+}
+
 .itemsInCart {
   position: absolute;
   bottom: 1px;
   font-size: 14px;
+  animation: fadeIn 1s;
 }
 
-.basketWrapper {
-  position: relative;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
