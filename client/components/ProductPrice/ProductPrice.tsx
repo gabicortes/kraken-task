@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Price } from "../../types";
 import styles from "./ProductPrice.module.scss";
 
-export function ProductPrice(props) {
+export function ProductPrice(props: Price) {
   const [count, setCount] = useState(1);
 
   const { product } = props;

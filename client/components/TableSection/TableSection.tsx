@@ -1,19 +1,20 @@
+import { TableSectionProps, TableProps } from "../../types";
 import { Section } from "../Section";
 import styles from "./TableSection.module.scss";
 
-export function TableSection(props) {
+export function TableSection(props: TableSectionProps) {
   return (
     <Section title={props.title}>
-      <Table table={props.table} />
+      <Table specifications={props.specifications} />
     </Section>
   );
 }
 
-function Table(props) {
+function Table(props: TableProps) {
   return (
     <table>
       <tbody>
-        {props.table.map((row, index) => {
+        {props.specifications.map((row, index) => {
           return (
             <tr key={index}>
               <td className={styles.tableElement}>{row.attribute}</td>

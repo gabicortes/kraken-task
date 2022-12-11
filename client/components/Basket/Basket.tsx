@@ -1,7 +1,8 @@
 import basket from "../../public/basket.svg";
+import { BasketProps } from "../../types";
 import styles from "./Basket.module.css";
 
-export function Basket(props) {
+export function Basket(props: BasketProps) {
   return (
     <div className={styles.basketWrapper}>
       <img className={styles.basket} src={basket.src} />

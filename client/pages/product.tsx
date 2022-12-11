@@ -5,10 +5,11 @@ import { ProductPrice } from "../components/ProductPrice";
 import { TableSection } from "../components/TableSection";
 import { TextSection } from "../components/TextSection";
 import { Footer } from "../components/Footer";
+import { ProductType } from "../types";
 
 export default function Product() {
-  const [product, setProduct] = useState({});
-  const [itemsInCart, setItemsInCart] = useState(0);
+  const [product, setProduct] = useState<ProductType>();
+  const [itemsInCart, setItemsInCart] = useState<number>(0);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -42,7 +43,7 @@ export default function Product() {
         itemsInCart={itemsInCart}
       />
       <TextSection title="Description" text={product.description} highlighted />
-      <TableSection title="Specifications" table={specifications} />
+      <TableSection title="Specifications" specifications={specifications} />
       <Footer highlighted />
     </>
   );

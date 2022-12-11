@@ -1,6 +1,7 @@
+import { Highlighted } from "../../types";
 import styles from "./Footer.module.scss";
 
-export function Footer(props) {
+export function Footer(props: Highlighted) {
   return (
     <section className={props.highlighted && styles.highlighted}>
       <p className={styles.footerText}>
