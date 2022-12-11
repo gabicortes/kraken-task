@@ -3,7 +3,7 @@ import axios from "axios";
 export const getProductInfo = async () => {
   try {
     const result = await axios({
-      url: "http://localhost:3001/graphql",
+      url: `http://${process.env.NEXT_PUBLIC_HOST}:3001/graphql`,
       method: "post",
       data: {
         query: `
