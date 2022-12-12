@@ -17,6 +17,6 @@ export const getProductInfo = async () => {
     });
     return result.data.data.Product;
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };

@@ -16,7 +16,7 @@ function Table(props: TableProps) {
       <tbody>
         {props.specifications.map((row, index) => {
           return (
-            <tr key={index}>
+            <tr key={row.attribute}>
               <td className={styles.tableElement}>{row.attribute}</td>
               <td className={styles.tableElement}>{row.value}</td>
             </tr>

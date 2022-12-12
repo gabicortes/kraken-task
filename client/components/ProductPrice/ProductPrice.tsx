@@ -12,13 +12,17 @@ export function ProductPrice(props: Price) {
     setCount(1);
   };
 
+  const priceWithTwoDecimals = ((product.price / 100) * count).toFixed(2);
+
+  const minOrderQuantity = count < 2;
+
   return (
     <section className={styles.section}>
       <img
         className={styles.productImg}
         title={product.name}
         src={product.img_url}
-        alt="product image"
+        alt="Product"
       />
       <div className={styles.priceDetailsWrapper}>
         <h1 className={styles.productName}>{product.name}</h1>
@@ -26,9 +30,7 @@ export function ProductPrice(props: Price) {
           {product.power} // Packet of {product.quantity}
         </span>
         <div className={styles.priceWrapper}>
-          <div className={styles.price}>
-            £{((product.price / 100) * count).toFixed(2)}
-          </div>
+          <div className={styles.price}>£{priceWithTwoDecimals}</div>
           <div className={styles.productQuantityWrapper}>
             <span className={styles.quantityProduct}>Qty</span>
             <div className={styles.buttonsWrapper}>
@@ -38,7 +40,7 @@ export function ProductPrice(props: Price) {
                 onClick={() => {
                   setCount(count - 1);
                 }}
-                disabled={count < 2}
+                disabled={minOrderQuantity}
               >
                 -
               </button>
