@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Price } from "../../types";
 import productImg from "../../public/philips-plumen.jpg";
 import styles from "./ProductPrice.module.scss";
+import { ImageContainer } from "../ImageContainer";
 
 export function ProductPrice(props: Price) {
   const [count, setCount] = useState(1);
@@ -19,12 +20,7 @@ export function ProductPrice(props: Price) {
 
   return (
     <section className={styles.section}>
-      <img
-        className={styles.productImg}
-        title={product.name}
-        src={productImg.src}
-        alt="Product"
-      />
+      <ImageContainer src={productImg.src} alt={product.name} />
       <div className={styles.priceDetailsWrapper}>
         <h1 className={styles.productName}>{product.name}</h1>
         <span className={styles.detailQuantity}>

@@ -3,6 +3,8 @@
 .section {
   display: flex;
   flex-direction: column;
+  position: relative;
+  gap: 30px;
 }
 
 .priceWrapper {
@@ -43,10 +45,6 @@
   color: colors.$purpleHaze;
 }
 
-.productImg {
-  border-radius: 20px;
-}
-
 .productName {
   font-weight: 200;
   font-size: 2rem;
@@ -77,18 +75,7 @@
   margin-bottom: 5px;
 }
 
-@media (min-width: 550px) {
-  .productImg {
-    align-self: center;
-    width: 70%;
-    height: auto;
-  }
-}
-
 @media (min-width: 768px) {
-  .productImg {
-    width: 30%;
-  }
   .section {
     flex-direction: row;
     justify-content: space-evenly;

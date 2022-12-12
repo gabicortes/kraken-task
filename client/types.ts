@@ -55,3 +55,8 @@ export type TextSectionProps = {
 export type TableSectionProps = {
   specifications: RowTable[];
 } & BaseSectionProps;
+
+export type ImageProps = {
+  src: string;
+  alt: string;
+};
