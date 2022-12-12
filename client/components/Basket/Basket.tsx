@@ -7,7 +7,7 @@ export function Basket(props: BasketProps) {
 
   return (
     <div className={styles.basketWrapper}>
-      <img className={styles.basket} src={basket.src} />
+      <img className={styles.basket} src={basket.src} alt="basket" />
       {props.itemsInCart !== 0 && (
         <div
           title="Basket items"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Price } from "../../types";
+import productImg from "../../public/philips-plumen.jpg";
 import styles from "./ProductPrice.module.scss";
 
 export function ProductPrice(props: Price) {
@@ -21,7 +22,7 @@ export function ProductPrice(props: Price) {
       <img
         className={styles.productImg}
         title={product.name}
-        src={product.img_url}
+        src={productImg.src}
         alt="Product"
       />
       <div className={styles.priceDetailsWrapper}>
